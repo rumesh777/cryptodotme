@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPrime - The Future of Finance</title>
+    <!-- Tailwind CSS (CDN for standalone usage) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Config for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            glow: '#60a5fa',
+                            success: '#10b981',
+                            danger: '#ef4444'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Glassmorphism Utilities */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        .hero-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, rgba(15, 23, 42, 0) 50%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-brands fa-bitcoin text-3xl text-brand-accent animate-pulse-slow"></i>
+                    <span class="font-bold text-2xl tracking-tight">Crypto<span class="text-brand-accent">Prime</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-white px-3 py-2 rounded-md text-sm font-medium hover:text-brand-accent transition-colors border-b-2 border-brand-accent">Home</a>
+                        <a href="market.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">Market</a>
+                        <a href="features.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-white/5">Features</a>
+                        <a href="contact.html" class="bg-brand-accent hover:bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-blue-500/30">Get Started</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-btn">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden glass absolute w-full top-20 left-0 border-t border-gray-700" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="text-white block px-3 py-2 rounded-md text-base font-medium bg-brand-accent/20">Home</a>
+                <a href="market.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Market</a>
+                <a href="features.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Features</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+                <div class="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full border border-brand-accent/30 bg-brand-accent/10 mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-success mr-2 animate-pulse"></span>
+                        <span class="text-xs font-semibold text-brand-accent tracking-wide uppercase">Next Gen Crypto Trading</span>
+                    </div>
+                    <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl lg:text-6xl">
+                        <span class="block">Invest in the</span>
+                        <span class="block text-gradient mt-1">Future of Money</span>
+                    </h1>
+                    <p class="mt-6 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        Join millions of users worldwide buying and selling cryptocurrencies with the most secure, fast, and reliable platform. Zero fees for your first month.
+                    </p>
+                    <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0 flex flex-col sm:flex-row gap-4">
+                        <a href="market.html" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-brand-accent hover:bg-blue-600 md:py-4 md:text-lg md:px-10 shadow-lg shadow-blue-500/30 transition-all hover:scale-105">
+                            Start Trading
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="features.html" class="inline-flex items-center justify-center px-8 py-3 border border-gray-600 text-base font-medium rounded-full text-gray-300 hover:bg-gray-800 md:py-4 md:text-lg md:px-10 transition-all hover:border-brand-accent hover:text-white">
+                            Learn More
+                        </a>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="mt-10 grid grid-cols-3 gap-4 border-t border-gray-800 pt-8">
+                        <div>
+                            <p class="text-2xl font-bold text-white">20M+</p>
+                            <p class="text-sm text-gray-500">Users</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">$50B+</p>
+                            <p class="text-sm text-gray-500">Volume</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">100%</p>
+                            <p class="text-sm text-gray-500">Secure</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Visual -->
+                <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
+                    <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
+                        <div class="relative block w-full rounded-2xl glass p-6 overflow-hidden transform transition-transform hover:scale-105 duration-500 border border-white/10 shadow-2xl shadow-blue-500/10">
+                            <!-- Decorative elements -->
+                            <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-brand-accent/20 blur-3xl"></div>
+                            <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 rounded-full bg-purple-500/20 blur-3xl"></div>
+                            
+                            <!-- Crypto Card UI Mockup -->
+                            <div class="relative z-10">
+                                <div class="flex items-center justify-between mb-8">
+                                    <div>
+                                        <p class="text-gray-400 text-sm">Total Balance</p>
+                                        <h3 class="text-3xl font-bold text-white mt-1">$42,593.00</h3>
+                                    </div>
+                                    <div class="h-10 w-10 bg-brand-accent rounded-full flex items-center justify-center text-white">
+                                        <i class="fas fa-wallet"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-4">
+                                    <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/5">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-500">
+                                                <i class="fa-brands fa-bitcoin text-xl"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-white">Bitcoin</p>
+                                                <p class="text-xs text-gray-400">BTC</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-medium text-white">$23,450.00</p>
+                                            <p class="text-xs text-brand-success">+2.4%</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/5">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">
+                                                <i class="fa-brands fa-ethereum text-xl"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-white">Ethereum</p>
+                                                <p class="text-xs text-gray-400">ETH</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-medium text-white">$1,680.00</p>
+                                            <p class="text-xs text-brand-success">+1.8%</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors border border-white/5">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-500">
+                                                <i class="fas fa-layer-group text-xl"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-white">Solana</p>
+                                                <p class="text-xs text-gray-400">SOL</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-medium text-white">$24.50</p>
+                                            <p class="text-xs text-brand-danger">-0.5%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button class="w-full mt-6 bg-brand-accent hover:bg-blue-600 text-white py-3 rounded-xl font-medium transition-colors">
+                                    View Portfolio
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-12 -right-12 animate-float hidden lg:block">
+                            <div class="glass p-4 rounded-2xl border border-white/10 shadow-xl">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
+                                        <i class="fas fa-arrow-trend-up"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400">Profit</p>
+                                        <p class="font-bold text-white">+$1,240</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 relative bg-brand-light/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base text-brand-accent font-semibold tracking-wide uppercase">Why Choose Us</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    The Most Trusted Platform
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto">
+                    We provide the best tools and security for your crypto journey. Experience seamless trading with advanced features.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-2xl border border-white/5 hover:border-brand-accent/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-brand-accent/10 rounded-xl flex items-center justify-center text-brand-accent text-2xl mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Bank-Grade Security</h3>
+                    <p class="text-gray-400">
+                        Your funds are protected by industry-leading encryption and cold storage protocols. We prioritize your safety.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-2xl border border-white/5 hover:border-brand-accent/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-500 text-2xl mb-6 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Lightning Fast</h3>
+                    <p class="text-gray-400">
+                        Execute trades in milliseconds with our high-performance matching engine. Never miss a market opportunity.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-2xl border border-white/5 hover:border-brand-accent/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center text-green-500 text-2xl mb-6 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">24/7 Support</h3>
+                    <p class="text-gray-400">
+                        Our dedicated support team is available around the clock to assist you with any questions or issues.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden shadow-2xl shadow-blue-500/20">
+                <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                <h2 class="text-3xl font-bold text-white mb-4 relative z-10">Ready to start your journey?</h2>
+                <p class="text-blue-100 mb-8 max-w-2xl mx-auto relative z-10 text-lg">
+                    Join the fastest growing crypto exchange today and get $10 worth of Bitcoin for free.
+                </p>
+                <div class="relative z-10">
+                    <a href="contact.html" class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg inline-block hover:scale-105 transform duration-200">
+                        Create Free Account
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-brand-light/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fa-brands fa-bitcoin text-2xl text-brand-accent"></i>
+                        <span class="font-bold text-xl tracking-tight text-white">Crypto<span class="text-brand-accent">Prime</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The world's most trusted and secure cryptocurrency exchange platform. Buy, sell, and trade with confidence.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="market.html" class="hover:text-brand-accent transition-colors">Markets</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Exchange</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Earn</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Wallet</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Fees</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Security</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-accent transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4">Subscribe to get the latest crypto news.</p>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Email address" class="bg-white/5 border border-white/10 text-white px-4 py-2 rounded-lg focus:outline-none focus:border-brand-accent w-full text-sm">
+                        <button class="bg-brand-accent text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 CryptoPrime. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-twitter text-lg"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook text-lg"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram text-lg"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoPrime - Market</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#1e293b',
+                            accent: '#3b82f6',
+                            glow: '#60a5fa',
+                            success: '#10b981',
+                            danger: '#ef4444'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 glass border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <i
+                        class="fa-brands fa-bitcoin text-3xl text-brand-accent group-hover:rotate-12 transition-transform"></i>
+                    <span class="font-bold text-2xl tracking-tight">Crypto<span
+                            class="text-brand-accent">Prime</span></span>
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="market.html"
+                            class="text-brand-accent bg-brand-accent/10 px-3 py-2 rounded-md text-sm font-medium transition-colors border border-brand-accent/20">Market</a>
+                        <a href="features.html"
+                            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
+                        <a href="contact.html"
+                            class="bg-brand-accent hover:bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-blue-500/30">Connect
+                            Wallet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Market Header -->
+    <div class="bg-brand-light/20 py-12 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold text-white mb-2">Market Overview</h1>
+            <p class="text-gray-400">Live prices and charts for top cryptocurrencies.</p>
+
+            <!-- Filter Pills -->
+            <div class="flex flex-wrap gap-3 mt-8">
+                <button
+                    class="px-4 py-2 rounded-full bg-white text-brand-dark font-medium text-sm hover:scale-105 transition-transform">All
+                    Assets</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-white/5 text-gray-300 font-medium text-sm hover:bg-white/10 transition-colors border border-white/5">Gainers</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-white/5 text-gray-300 font-medium text-sm hover:bg-white/10 transition-colors border border-white/5">Losers</button>
+                <button
+                    class="px-4 py-2 rounded-full bg-white/5 text-gray-300 font-medium text-sm hover:bg-white/10 transition-colors border border-white/5">New
+                    Listings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Market Table -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="glass rounded-2xl overflow-hidden border border-white/5">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr
+                            class="text-gray-400 text-xs uppercase tracking-wider border-b border-gray-700/50 bg-black/20">
+                            <th class="px-6 py-4 font-medium">Name</th>
+                            <th class="px-6 py-4 font-medium">Price</th>
+                            <th class="px-6 py-4 font-medium">24h Change</th>
+                            <th class="px-6 py-4 font-medium hidden md:table-cell">Market Cap</th>
+                            <th class="px-6 py-4 font-medium hidden lg:table-cell">Volume (24h)</th>
+                            <th class="px-6 py-4 font-medium text-right">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-700/50 text-sm">
+                        <!-- BTC -->
+                        <tr class="hover:bg-white/5 transition-colors group">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-brands fa-bitcoin text-2xl text-orange-500"></i>
+                                    <!-- Fallback if image fails -->
+                                    <div>
+                                        <div class="font-bold text-white">Bitcoin</div>
+                                        <div class="text-xs text-gray-500">BTC</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-white font-medium">$42,394.00</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-brand-success font-medium">
+                                <i class="fas fa-caret-up mr-1"></i>2.45%
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-400 hidden md:table-cell">$824.5B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-400 hidden lg:table-cell">$24.1B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right">
+                                <button
+                                    class="text-brand-accent border border-brand-accent hover:bg-brand-accent hover:text-white px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Trade</button>
+                            </td>
+                        </tr>
+
+                        <!-- ETH -->
+                        <tr class="hover:bg-white/5 transition-colors group">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-brands fa-ethereum text-2xl text-blue-500"></i>
+                                    <div>
+                                        <div class="font-bold text-white">Ethereum</div>
+                                        <div class="text-xs text-gray-500">ETH</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-white font-medium">$2,250.80</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-brand-success font-medium">
+                                <i class="fas fa-caret-up mr-1"></i>1.12%
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-400 hidden md:table-cell">$270.2B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-400 hidden lg:table-cell">$9.8B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right">
+                                <button
+                                    class="text-brand-accent border border-brand-accent hover:bg-brand-accent hover:text-white px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Trade</button>
+                            </td>
+                        </tr>
+
+                        <!-- SOL -->
+                        <tr class="hover:bg-white/5 transition-colors group">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-gradient-to-tr from-purple-500 to-green-400 flex items-center justify-center text-[10px] font-bold">
+                                        S</div>
+                                    <div>
+                                        <div class="font-bold text-white">Solana</div>
+                                        <div class="text-xs text-gray-500">SOL</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-white font-medium">$98.45</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-brand-danger font-medium">
+                                <i class="fas fa-caret-down mr-1"></i>0.85%
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-400 hidden md:table-cell">$38.1B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-400 hidden lg:table-cell">$2.4B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right">
+                                <button
+                                    class="text-brand-accent border border-brand-accent hover:bg-brand-accent hover:text-white px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Trade</button>
+                            </td>
+                        </tr>
+                        <!-- BNB -->
+                        <tr class="hover:bg-white/5 transition-colors group">
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-yellow-500 flex items-center justify-center text-[10px] font-bold text-black">
+                                        <i class="fas fa-coins"></i></div>
+                                    <div>
+                                        <div class="font-bold text-white">BNB</div>
+                                        <div class="text-xs text-gray-500">BNB</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-white font-medium">$305.20</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-brand-success font-medium">
+                                <i class="fas fa-caret-up mr-1"></i>0.45%
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-400 hidden md:table-cell">$46.8B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-gray-400 hidden lg:table-cell">$1.1B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right">
+                                <button
+                                    class="text-brand-accent border border-brand-accent hover:bg-brand-accent hover:text-white px-4 py-1.5 rounded-lg text-xs font-semibold transition-all">Trade</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="bg-black/20 px-6 py-4 flex items-center justify-between border-t border-white/5">
+                <div class="text-xs text-gray-400">Showing <span class="text-white font-medium">1-4</span> of <span
+                        class="text-white font-medium">100+</span> crypto assets</div>
+                <div class="flex gap-2">
+                    <button
+                        class="px-3 py-1 rounded bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 text-xs transition-colors disabled:opacity-50"
+                        disabled>Previous</button>
+                    <button
+                        class="px-3 py-1 rounded bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 text-xs transition-colors">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Chart Section (Mock) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <h2 class="text-2xl font-bold text-white mb-6">Market Trends</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div
+                class="glass p-6 rounded-2xl border border-white/5 h-80 flex items-center justify-center relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-brand-accent/20 to-transparent opacity-80 z-0 h-full w-full rotate-180 transform scale-y-[-1] bottom-0 origin-bottom">
+                </div>
+                <!-- Simple SVG Chart Mockup -->
+                <svg viewBox="0 0 500 150"
+                    class="w-full h-full text-brand-accent stroke-current fill-none stroke-2 z-10"
+                    preserveAspectRatio="none">
+                    <path d="M0,100 Q50,50 100,80 T200,60 T300,90 T400,40 T500,20" />
+                    <circle cx="500" cy="20" r="4" class="fill-current animate-pulse" />
+                </svg>
+                <div class="absolute top-4 left-6">
+                    <h3 class="font-bold text-white">BTC/USD</h3>
+                    <p class="text-sm text-green-400">+5.2% last 7 days</p>
+                </div>
+            </div>
+
+            <div
+                class="glass p-6 rounded-2xl border border-white/5 h-80 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-purple-500/20 to-transparent opacity-50 z-0"></div>
+                <!-- Simple SVG Chart Mockup -->
+                <svg viewBox="0 0 500 150" class="w-full h-full text-purple-500 stroke-current fill-none stroke-2 z-10"
+                    preserveAspectRatio="none">
+                    <path d="M0,120 Q80,140 150,110 T300,100 T400,60 T500,80" />
+                    <circle cx="500" cy="80" r="4" class="fill-current animate-pulse" />
+                </svg>
+                <div class="absolute top-4 left-6">
+                    <h3 class="font-bold text-white">ETH/USD</h3>
+                    <p class="text-sm text-green-400">+3.1% last 7 days</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
