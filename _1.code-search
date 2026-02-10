@@ -1,0 +1,14 @@
+# Query: +1
+# ContextLines: 1
+
+2 results - 2 files
+
+contact.html:
+  108                                  <p class="text-sm text-gray-400">Call Us</p>
+  109:                                 <p class="font-medium text-white">+94 788779479 </p>
+  110                              </div>
+
+index.html:
+  197                                              <p class="font-medium text-white">$1,680.00</p>
+  198:                                             <p class="text-xs text-brand-success">+1.8%</p>
+  199                                          </div>
