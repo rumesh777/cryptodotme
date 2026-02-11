@@ -137,34 +137,34 @@
             </div>
 
             <!-- Contact Form -->
-            <form class="space-y-4">
+            <form action="https://formspree.io/f/https://formspree.io/f/xeelekrb" method="POST" class="space-y-4"></form>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="space-y-2">
                         <label class="text-sm font-medium text-gray-400">First Name</label>
-                        <input type="text"
-                            class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent transition-colors"
-                            placeholder="John">
+                        <input type="text" name="first_name" required
+class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3"
+placeholder="John">
                     </div>
                     <div class="space-y-2">
                         <label class="text-sm font-medium text-gray-400">Last Name</label>
-                        <input type="text"
-                            class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent transition-colors"
-                            placeholder="Doe">
+                        <input type="text" name="last_name" required
+class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3"
+placeholder="Doe">
                     </div>
                 </div>
 
                 <div class="space-y-2">
                     <label class="text-sm font-medium text-gray-400">Email Address</label>
-                    <input type="email"
-                        class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent transition-colors"
-                        placeholder="john@example.com">
+                    <input type="email" name="email" required
+class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3"
+placeholder="john@example.com">
                 </div>
 
                 <div class="space-y-2">
                     <label class="text-sm font-medium text-gray-400">Message</label>
-                    <textarea rows="4"
-                        class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent transition-colors"
-                        placeholder="How can we help you?"></textarea>
+                    <textarea rows="4" name="message" required
+class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3"
+placeholder="How can we help you?"></textarea>
                 </div>
 
                 <button type="button"
